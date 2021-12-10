@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="row"  style="margin-bottom: 175px;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <center><h1>Liver Disease Predictor</h1></center>
+        <div class="card card-body" style="border: 1px solid black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Age" placeholder="Age">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Bilirubin</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Total_Bilirubin" placeholder="Total Bilirubin">
+                        </div>
+                        <div class="form-group">
+                            <label>Direct Bilirubin</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Direct_Bilirubin" placeholder="Direct Bilirubin">
+                        </div>
+                        <div class="form-group">
+                            <label>Alkaline Phosphotase</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Alkaline_Phosphotase" placeholder="Alkaline Phosphotase">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamine_Aminotransferase</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase">
+                        </div>
+                        <div class="form-group">
+                            <label>Aspartate Aminotransferase</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Protiens</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Total_Protiens" placeholder="Total Protiens">
+                        </div>
+                        <div class="form-group">
+                            <label>Albumin</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Albumin" placeholder="Albumin">
+                        </div>
+                        <div class="form-group">
+                            <label>Albumin and Globulin_Ratio</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender(Male: 1, Female: 0)</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Gender_Male" placeholder="Gender(Male: 1, Female: 0)">
+                        </div>
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:title" content="Disease Diagnosis Web App">
+  <title>Disease Diagnosis Web App</title>
+  <link rel="icon" href="{{ url_for('static', filename = 'logo1.png') }}" type="image/icon type">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">  
+  <style>
+    html, body{ height:100%; margin:0; }
+header{ height:50px;}
+body{ 
+  display:flex; 
+  flex-direction:column; 
+}
+
+  </style>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="background-color: rgb(18, 85, 192) !important;">
+        <a class="nav-link" style="color:white;" href="{{ url_for('home') }}">Disease Diagnosis Web App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item active">
+               <a href="{{ url_for('home') }}" class="nav-link"></a>
+             </li>
+             <li class="nav-item active">
+               <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
+             </li>
+             <li class="nav-item active">
+               <a class="nav-link" href="{{ url_for('cancerPage') }}">Breast Cancer</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
+              </li>
+            </ul>
+         </div>
+       </nav>
+	<br>
+<br>
+<br>
+<br>
+<main>
+	<div class="container-fluid" style="margin-bottom: 20px;">
+	{% block content %}
+
+	{% endblock %}
+    </div>
+  </main>
+</body>
+</html>

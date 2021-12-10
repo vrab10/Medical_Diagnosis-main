@@ -1,0 +1,130 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <center><h1>Breast Cancer Predictor</h1></center>
+        <div class="card card-body" style="border: 1px solid black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                        <div class="form-group">
+                            <label>Mean of distances from center to points on the perimeter</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_mean" placeholder="radius_mean">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Standard deviation of gray-scale values</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="texture_mean" placeholder="texture_mean">
+                    
+                        </div>
+                        <div class="form-group">
+                            <label>Mean size of the core tumor</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_mean" placeholder="perimeter_mean">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Area Mean</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_mean" placeholder="area_mean">
+
+                        </div>
+                        <div class="form-group">
+                            <label>Mean of local variation in radius lengths</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="smoothness_mean" placeholder="smoothness_mean">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Mean of perimeter^2 / area - 1.0</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_mean" placeholder="compactness_mean">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label>Mean of severity of concave portions of the contour</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_mean" placeholder="concavity_mean">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Mean for number of concave portions of the contour</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_mean" placeholder="concave_points_mean">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Symmetry Mean</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="symmetry_mean" placeholder="symmetry_mean">            
+                        </div>
+                        <div class="form-group">
+                            <label>Radius Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_se" placeholder="radius_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Perimeter Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_se" placeholder="perimeter_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Area Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_se" placeholder="area_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Compactness Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_se" placeholder="compactness_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Concavity Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_se" placeholder="concavity_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Concave Points Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_se" placeholder="concave_points_se">
+                        </div>
+                        <div class="form-group">
+                            <label>Fractal Dimension Se</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="fractal_dimension_se" placeholder="fractal_dimension_se">
+                        </div>
+                        <div class="form-group">
+                            
+                            <label>Radius Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_worst" placeholder="radius_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Texture Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="texture_worst" placeholder="texture_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Perimeter Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_worst" placeholder="perimeter_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Area Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_worst" placeholder="area_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Smoothness Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="smoothness_worst" placeholder="smoothness_worst">
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Compactness Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_worst" placeholder="compactness_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Concavity Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_worst" placeholder="concavity_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Concave Points Worst</label>
+
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_worst" placeholder="concave_points_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Symmetry Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="symmetry_worst" placeholder="symmetry_worst">
+                        </div>
+                        <div class="form-group">
+                            <label>Fractal Dimensonal Worst</label>
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="fractal_dimension_worst" placeholder="fractal_dimension_worst">
+                        </div>
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+{% endblock %}
